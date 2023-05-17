@@ -1,0 +1,113 @@
+device:  cuda
+
+AnglesRefine_path: /mnt/i/AnglesRefine/
+
+INPUT:  /mnt/i/AnglesRefine/example/CASP11_T0797_4.pdb
+
+Starting Model:  CASP11_T0797_4.pdb
+
+first residue index： 1
+
+length： 37
+
+fasta: REYHLKELREQLAKQTVAIAELTEELQSKCIQLNKLQ 37
+
+startingSS: CHHHHHHHHHHHHHHHHHCCCCCHHHHHHHHHHHHHC 37
+
+
+Predicting target ss by PSIPRED------------------ 
+
+targetSS: CCHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHCCC 37
+
+/mnt/i/AnglesRefine/output/CASP11_T0797_4/CASP11_T0797_4.targetSS SAVED! 
+
+
+Generating inconsistent local structures whose target secondary structures are Helix------------------ 
+
+starting model has 1 inconsistent local structures whose target secondary structures are Helix 
+-----------------------------INFO-----------------------------
+SequenceNumber---------residue index--------length:
+1------------------------[3, 34]---------------32
+
+
+refining (Default-Mode)------------------ 
+The following inconsistent local structures are ready to refine to Helix:
+-----------------------------INFO-----------------------------
+SequenceNumber---------residue index--------length:
+1------------------------[3, 34]---------------32
+
+
+----refine idnconsisitent local structure 1
+--------------residue index: [3, 34]
+
+separate``````````````````````
+structure_a:/mnt/i/AnglesRefine/output/CASP11_T0797_4/1_fixedcoord1.pdb
+pre_refine_local_structure:/mnt/i/AnglesRefine/output/CASP11_T0797_4/1_modifiedcoord.pdb
+structure_b:/mnt/i/AnglesRefine/output/CASP11_T0797_4/1_fixedcoord2.pdb    SAVED!
+
+pdb2angles`````````````````
+pdb： /mnt/i/AnglesRefine/output/CASP11_T0797_4/1_modifiedcoord.pdb
+angles: /mnt/i/AnglesRefine/output/CASP11_T0797_4/angles_out/  SAVED!
+
+predicting Helix angles``````````````````````
+predict angles (psi-32)``````````````````````
+source: tensor([889, 376, 411, 412, 391, 384, 382, 400, 391, 398, 350, 381, 385, 393,
+        412, 408, 407, 521, 396, 446, 346, 752, 373, 413, 395, 364, 413, 416,
+        382, 409, 407, 374], device='cuda:0') -> prediction: tensor([893, 395, 439, 489, 378, 379, 370, 381, 403, 374, 389, 400, 451, 440,
+        423, 407, 373, 373, 391, 411, 368, 419, 381, 397, 390, 402, 373, 427,
+        439, 384, 437, 382], device='cuda:0')
+predict angles (phi-32)``````````````````````
+source: tensor([167, 327, 321, 281, 348, 312, 322, 305, 317, 336, 348, 325, 305, 296,
+        303, 288, 200, 330, 310, 222, 237, 370, 335, 257, 355, 316, 291, 291,
+        311, 313, 330, 303], device='cuda:0') -> prediction: tensor([349, 292, 308, 346, 308, 322, 321, 336, 320, 293, 320, 303, 305, 319,
+        328, 303, 302, 306, 325, 304, 293, 279, 267, 332, 311, 299, 303, 318,
+        324, 289, 293, 226], device='cuda:0')
+predict angles (omega-32)``````````````````````
+source: tensor([1000,  989,  997,   25,  983,    8,   11,  997,    5,  993,   10,  998,
+          15,   27,  999,   29,   20,   16,    4,   37,   31,  975,  999,   36,
+         982,    8,  992,   25,  996,    9,  985,   28], device='cuda:0') -> prediction: tensor([999,   5, 998,   6,   2, 991, 991, 987,   2,   1, 984,  13,   3,   0,
+        990,   0, 999,   3, 978,   4,   9, 998,   4,   3, 997, 999, 990, 986,
+        999,   4,   8,  15], device='cuda:0')
+predict angles (CA_C_N_angle-32)``````````````````````
+source: tensor([648, 663, 653, 648, 649, 651, 649, 657, 651, 642, 653, 660, 648, 657,
+        661, 651, 649, 666, 643, 654, 651, 649, 656, 654, 653, 655, 661, 655,
+        651, 659, 652, 653], device='cuda:0') -> prediction: tensor([645, 653, 645, 656, 651, 650, 659, 653, 650, 656, 651, 651, 654, 649,
+        654, 649, 655, 655, 654, 650, 656, 643, 655, 653, 655, 652, 654, 649,
+        655, 646, 658, 654], device='cuda:0')
+predict angles (C_N_CA_angle-32)``````````````````````
+source: tensor([674, 679, 686, 682, 690, 681, 688, 678, 682, 694, 689, 676, 676, 672,
+        679, 666, 671, 680, 687, 678, 674, 692, 678, 667, 688, 676, 672, 685,
+        671, 679, 687, 684], device='cuda:0') -> prediction: tensor([674, 679, 693, 688, 674, 682, 680, 676, 680, 679, 683, 611, 676, 672,
+        691, 601, 678, 680, 663, 680, 685, 663, 668, 691, 685, 674, 680, 687,
+        620, 652, 663, 676], device='cuda:0')
+predict angles (N_CA_C_angle-32)``````````````````````
+source: tensor([616, 622, 602, 585, 612, 604, 606, 609, 610, 583, 626, 613, 591, 610,
+        599, 596, 605, 614, 611, 572, 588, 633, 619, 581, 600, 617, 619, 589,
+        602, 609, 600, 603], device='cuda:0') -> prediction: tensor([618, 623, 616, 617, 620, 621, 613, 631, 623, 627, 589, 620, 638, 631,
+        584, 637, 626, 637, 623, 626, 616, 626, 632, 617, 612, 625, 629, 592,
+        616, 633, 645, 666], device='cuda:0')
+
+predicted Helix Angles: /mnt/i/AnglesRefine/output/CASP11_T0797_4/unmatch_pred/ SAVED!
+
+format``````````````````````
+formatAngles:/mnt/i/AnglesRefine/output/CASP11_T0797_4/final_format_angles/1_mod_pred_angles.json  SAVED!
+
+angles2PDB``````````````````````
+angles： /mnt/i/AnglesRefine/output/CASP11_T0797_4/final_format_angles/1_mod_pred_angles.json
+pdb: /mnt/i/AnglesRefine/output/CASP11_T0797_4/1_mod_pred.pdb SAVED!
+
+translate and rotate```````````````````
+structure_a:/mnt/i/AnglesRefine/output/CASP11_T0797_4/1_fixedcoord1.pdb
+refined_local_structure:/mnt/i/AnglesRefine/output/CASP11_T0797_4/1_modifiedcoord_translate_rotate.pdb
+structure_b:/mnt/i/AnglesRefine/output/CASP11_T0797_4/1_fixedcoord2_translate.pdb    SAVED!
+
+
+combine```````````````````
+/mnt/i/AnglesRefine/output/CASP11_T0797_4/final_refined_pdb/1_refined.pdb    SAVED!
+
+
+Done (Default-Mode)------------------ 
+
+OUTPUT:  /mnt/i/AnglesRefine/output/refined_CASP11_T0797_4.pdb
+
+Refined Model:  refined_CASP11_T0797_4.pdb

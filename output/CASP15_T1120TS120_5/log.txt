@@ -1,0 +1,151 @@
+device:  cuda
+
+AnglesRefine_path: /mnt/i/AnglesRefine/
+
+INPUT:  /mnt/i/AnglesRefine/example/CASP15_T1120TS120_5.pdb
+
+Starting Model:  CASP15_T1120TS120_5.pdb
+
+first residue index： 1
+
+length： 228
+
+fasta: APLTLNFGSVRLPVSADGLLHAPTAQQQLGLTQSWEAALVEHGLPETYRDFGAGPEAAVSVPDFVALAFALDTPEARRWQKRARELLARAMQGDVRVAAQIAERNPEPDARRWLAARLESTGARRELLATVARHGGEGRVYGQLGSISNRTVLGKDSASVRQERGVKATRDGLTSAELLRLAYIDTVTARAIQESEARGNAAILTLHEQVARSERQSWERAGQVQRVG 228
+
+startingSS: CCEEEEECCEEEEECCCCCEEHHHHHHHHCCCCCHHHHHHHCCCCCEEEECCCCEEEEECHHHHHHHHHHCCCHHHHHHHHHHHHHHHHHHCCCHHHHHHHHCCCCCHHHHHHHHHHHHHHHHHHHHHHHHHHCCCCCCHHHHHHHHHHHHHHCCCHHHHHHHHCCCCHHHHCCHHHHHHHHHHHHHHHHHHHHCCCCHHHHHHHHHHHHHHHHHHHHHHHHHHHHHC 228
+
+
+Predicting target ss by PSIPRED------------------ 
+
+targetSS: CCCEEECCCEEEEECCCCCEECCCHHHHHCCCHHHHHHHHHCCCCCHHHHCCCCHHHCCCCCHHHHHHHHCCCHHHHHHHHHHHHHHHHHHHCCHHHHHHHHHHCCCCCHHHHHHHHHHHHCHHHHHHHHHHHHCCCCCEEEECCCCCCCEECCCCCHHHHHHHCCCCCCCCCCHHHHHHHHHHHHHHHHHHHHHHHHCCEEEEHHHHHHHHHHHHHHHHHCCCCCCC 228
+
+/mnt/i/AnglesRefine/output/CASP15_T1120TS120_5/CASP15_T1120TS120_5.targetSS SAVED! 
+
+
+Generating inconsistent local structures whose target secondary structures are Helix------------------ 
+
+starting model has 5 inconsistent local structures whose target secondary structures are Helix 
+-----------------------------INFO-----------------------------
+SequenceNumber---------residue index--------length:
+1------------------------[33, 41]---------------9
+2------------------------[74, 92]---------------19
+3------------------------[95, 104]---------------10
+4------------------------[123, 134]---------------12
+5------------------------[175, 198]---------------24
+
+
+refining (UserAutonomy-Mode)------------------ 
+The following inconsistent local structures are ready to refine to Helix:
+-----------------------------INFO-----------------------------
+SequenceNumber---------residue index--------length:
+1------------------------[33, 41]---------------9
+2------------------------[74, 92]---------------19
+
+
+----refine idnconsisitent local structure 1
+--------------residue index: [33, 41]
+
+separate``````````````````````
+structure_a:/mnt/i/AnglesRefine/output/CASP15_T1120TS120_5/1_fixedcoord1.pdb
+pre_refine_local_structure:/mnt/i/AnglesRefine/output/CASP15_T1120TS120_5/1_modifiedcoord.pdb
+structure_b:/mnt/i/AnglesRefine/output/CASP15_T1120TS120_5/1_fixedcoord2.pdb    SAVED!
+
+pdb2angles`````````````````
+pdb： /mnt/i/AnglesRefine/output/CASP15_T1120TS120_5/1_modifiedcoord.pdb
+angles: /mnt/i/AnglesRefine/output/CASP15_T1120TS120_5/angles_out/  SAVED!
+
+predicting Helix angles``````````````````````
+predict angles (psi-9)``````````````````````
+source: tensor([889, 952, 908, 373, 371, 387, 390, 370, 368], device='cuda:0') -> prediction: tensor([889, 420, 416, 396, 394, 402, 409, 425, 464], device='cuda:0')
+predict angles (phi-9)``````````````````````
+source: tensor([167, 337, 345, 343, 328, 322, 324, 327, 338], device='cuda:0') -> prediction: tensor([167, 297, 283, 310, 309, 305, 291, 289, 229], device='cuda:0')
+predict angles (omega-9)``````````````````````
+source: tensor([1000,  982,  993,  992,  992,  988,  987,  996,  999], device='cuda:0') -> prediction: tensor([998,   5,   6,   9,  11,   7, 998, 999,  17], device='cuda:0')
+predict angles (CA_C_N_angle-9)``````````````````````
+source: tensor([648, 647, 647, 653, 656, 658, 657, 656, 655], device='cuda:0') -> prediction: tensor([652, 647, 652, 644, 649, 645, 646, 649, 654], device='cuda:0')
+predict angles (C_N_CA_angle-9)``````````````````````
+source: tensor([674, 678, 683, 691, 678, 681, 678, 685, 689], device='cuda:0') -> prediction: tensor([674, 670, 697, 655, 672, 627, 648, 687, 667], device='cuda:0')
+predict angles (N_CA_C_angle-9)``````````````````````
+source: tensor([617, 618, 623, 623, 623, 624, 620, 618, 624], device='cuda:0') -> prediction: tensor([620, 627, 615, 612, 618, 618, 613, 621, 632], device='cuda:0')
+
+predicted Helix Angles: /mnt/i/AnglesRefine/output/CASP15_T1120TS120_5/unmatch_pred/ SAVED!
+
+format``````````````````````
+formatAngles:/mnt/i/AnglesRefine/output/CASP15_T1120TS120_5/final_format_angles/1_mod_pred_angles.json  SAVED!
+
+angles2PDB``````````````````````
+angles： /mnt/i/AnglesRefine/output/CASP15_T1120TS120_5/final_format_angles/1_mod_pred_angles.json
+pdb: /mnt/i/AnglesRefine/output/CASP15_T1120TS120_5/1_mod_pred.pdb SAVED!
+
+translate and rotate```````````````````
+structure_a:/mnt/i/AnglesRefine/output/CASP15_T1120TS120_5/1_fixedcoord1.pdb
+refined_local_structure:/mnt/i/AnglesRefine/output/CASP15_T1120TS120_5/1_modifiedcoord_translate_rotate.pdb
+structure_b:/mnt/i/AnglesRefine/output/CASP15_T1120TS120_5/1_fixedcoord2_translate.pdb    SAVED!
+
+
+combine```````````````````
+/mnt/i/AnglesRefine/output/CASP15_T1120TS120_5/final_refined_pdb/1_refined.pdb    SAVED!
+
+
+----refine idnconsisitent local structure 2
+--------------residue index: [74, 92]
+
+separate``````````````````````
+structure_a:/mnt/i/AnglesRefine/output/CASP15_T1120TS120_5/2_fixedcoord1.pdb
+pre_refine_local_structure:/mnt/i/AnglesRefine/output/CASP15_T1120TS120_5/2_modifiedcoord.pdb
+structure_b:/mnt/i/AnglesRefine/output/CASP15_T1120TS120_5/2_fixedcoord2.pdb    SAVED!
+
+pdb2angles`````````````````
+pdb： /mnt/i/AnglesRefine/output/CASP15_T1120TS120_5/2_modifiedcoord.pdb
+angles: /mnt/i/AnglesRefine/output/CASP15_T1120TS120_5/angles_out/  SAVED!
+
+predicting Helix angles``````````````````````
+predict angles (psi-19)``````````````````````
+source: tensor([889, 394, 353, 386, 420, 393, 378, 379, 361, 388, 388, 382, 378, 380,
+        371, 371, 388, 377, 420], device='cuda:0') -> prediction: tensor([762, 421, 388, 420, 364, 393, 352, 386, 370, 399, 385, 385, 401, 383,
+        388, 381, 392, 390, 386], device='cuda:0')
+predict angles (phi-19)``````````````````````
+source: tensor([167, 327, 330, 334, 316, 312, 336, 335, 338, 317, 327, 324, 326, 327,
+        337, 325, 322, 324, 269], device='cuda:0') -> prediction: tensor([324, 323, 316, 340, 324, 315, 311, 317, 318, 324, 345, 317, 321, 328,
+        317, 322, 326, 301, 198], device='cuda:0')
+predict angles (omega-19)``````````````````````
+source: tensor([1000,  991,  997,  986,  979,  985,  986,  986,  991,  993,  982,  989,
+         987,  993,  992,  992,  989,  989,  986], device='cuda:0') -> prediction: tensor([   0,    1,  999,  998,    3,  998,  999,  998,  999, 1000,    2,  998,
+         994,  994,  995,  996,  997,  996,    0], device='cuda:0')
+predict angles (CA_C_N_angle-19)``````````````````````
+source: tensor([648, 653, 654, 656, 664, 658, 656, 656, 656, 656, 659, 656, 656, 656,
+        656, 654, 655, 657, 654], device='cuda:0') -> prediction: tensor([652, 649, 637, 648, 651, 644, 643, 644, 651, 656, 658, 653, 647, 645,
+        658, 657, 644, 657, 651], device='cuda:0')
+predict angles (C_N_CA_angle-19)``````````````````````
+source: tensor([674, 708, 689, 682, 678, 684, 684, 683, 685, 683, 684, 684, 683, 685,
+        681, 685, 683, 687, 692], device='cuda:0') -> prediction: tensor([687, 664, 663, 656, 667, 673, 669, 672, 663, 667, 663, 665, 676, 673,
+        683, 678, 666, 660, 672], device='cuda:0')
+predict angles (N_CA_C_angle-19)``````````````````````
+source: tensor([626, 623, 620, 631, 620, 622, 619, 620, 622, 623, 622, 621, 623, 618,
+        621, 623, 622, 627, 631], device='cuda:0') -> prediction: tensor([622, 592, 615, 623, 629, 634, 600, 601, 608, 615, 608, 608, 611, 605,
+        608, 598, 603, 604, 603], device='cuda:0')
+
+predicted Helix Angles: /mnt/i/AnglesRefine/output/CASP15_T1120TS120_5/unmatch_pred/ SAVED!
+
+format``````````````````````
+formatAngles:/mnt/i/AnglesRefine/output/CASP15_T1120TS120_5/final_format_angles/2_mod_pred_angles.json  SAVED!
+
+angles2PDB``````````````````````
+angles： /mnt/i/AnglesRefine/output/CASP15_T1120TS120_5/final_format_angles/2_mod_pred_angles.json
+pdb: /mnt/i/AnglesRefine/output/CASP15_T1120TS120_5/2_mod_pred.pdb SAVED!
+
+translate and rotate```````````````````
+structure_a:/mnt/i/AnglesRefine/output/CASP15_T1120TS120_5/2_fixedcoord1.pdb
+refined_local_structure:/mnt/i/AnglesRefine/output/CASP15_T1120TS120_5/2_modifiedcoord_translate_rotate_rotate_strech.pdb
+structure_b:/mnt/i/AnglesRefine/output/CASP15_T1120TS120_5/2_fixedcoord2_translate.pdb    SAVED!
+
+
+combine```````````````````
+/mnt/i/AnglesRefine/output/CASP15_T1120TS120_5/final_refined_pdb/2_refined.pdb    SAVED!
+
+
+Done (UserAutonomy-Mode)------------------ 
+
+OUTPUT:  /mnt/i/AnglesRefine/output/refined_CASP15_T1120TS120_5.pdb
+
+Refined Model:  refined_CASP15_T1120TS120_5.pdb
