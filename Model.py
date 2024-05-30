@@ -3,23 +3,17 @@ import numpy as np
 import torch
 import torch.nn as nn
 
-
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 src_vocab_size = 1004
 tgt_vocab_size = 1004
-src_len = 6  # enc_input max sequence length
-tgt_len = 7
 
-
-# Transformer 参数
+# Transformer 
 d_model = 512  # Embedding Size
 d_ff = 2048 # FeedForward dimension
 d_k = d_v = 64  # dimension of K(=Q), V
 n_layers = 6  # number of Encoder of Decoder Layer
 n_heads = 8  # number of heads in Multi-Head Attention
 
-
-# 搭建Transformer模型
 class Transformer(nn.Module):
     def __init__(self):
         super(Transformer,self).__init__()
@@ -152,7 +146,7 @@ class PoswiseFeedForwardNet(nn.Module):
 def get_attn_pad_mask(seq_q,seq_k):
     batch_size,len_q=seq_q.size()
     batch_size,len_k=seq_k.size()
-    pad_attn_mask=seq_k.data.eq(36003).unsqueeze(1)
+    pad_attn_mask=seq_k.data.eq(1003).unsqueeze(1)
     return pad_attn_mask.expand(batch_size,len_q,len_k)
 
 
